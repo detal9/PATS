@@ -30,7 +30,7 @@ require(tictoc);
 # verbose = TRUE or FALSE. If TRUE, the function informs the user of the current
 #           running time and expected total running time.
 # interrupt = TRUE or FALSE. If TRUE, the function offers the user to interrupt
-#             the function if the expected running time is > 10 minutes.
+#             the function if the expected running time is ­> 10 minutes.
 #
 # Value:
 # ------
