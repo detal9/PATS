@@ -5,7 +5,7 @@ require(tictoc);
 # Arguments:
 # ----------
 # outcome = outcome variable
-# partial.blip.mod = a list where each element reprents the right hand side of the
+# partial.blip.mod = a list where each element represents the right hand side of the
 #                    partial blip function, 
 #                    for example list(~X11, ~X21); if treatment is to tailored
 #                    according to X11 at first time point and X21 at second (H*).
@@ -30,7 +30,7 @@ require(tictoc);
 # verbose = TRUE or FALSE. If TRUE, the function informs the user of the current
 #           running time and expected total running time.
 # interrupt = TRUE or FALSE. If TRUE, the function offers the user to interrupt
-#             the function if the expected running time is ­> 10 minutes.
+#             the function if the expected running time is Â­> 10 minutes.
 #
 # Value:
 # ------
@@ -280,7 +280,7 @@ PATS = function(outcome, partial.blip.mod, full.blip.mod, partial.treat.mod = NU
         obj$psi[[j]] = psi.iptw.gest.star[[j]];
         obj$opt.treat[[j]] = dopt.iptw.gest.star[[j]];
       }
-      obj$regret = rowSums(as.matrix(regret.iptw.gest.star[,(j+1):K]));
+      obj$regret = rowSums(as.matrix(regret.iptw.gest.star));
       obj$opt.Y = data$outcome + obj$regret;
     }
 
@@ -307,7 +307,7 @@ PATS = function(outcome, partial.blip.mod, full.blip.mod, partial.treat.mod = NU
         obj$psi[[j]] = psi.ce.dwols.star[[j]];
         obj$opt.treat[[j]] = dopt.ce.dwols.star[[j]];
       }
-      obj$regret = rowSums(as.matrix(regret.ce.dwols.star[,(j+1):K]));
+      obj$regret = rowSums(as.matrix(regret.ce.dwols.star));
       obj$opt.Y = data$outcome + obj$regret;
     }
 
@@ -333,7 +333,7 @@ PATS = function(outcome, partial.blip.mod, full.blip.mod, partial.treat.mod = NU
         obj$psi[[j]] = psi.ce.gest.star[[j]];
         obj$opt.treat[[j]] = dopt.ce.gest.star[[j]];
       }
-      obj$regret = rowSums(as.matrix(regret.ce.gest.star[,(j+1):K]));
+      obj$regret = rowSums(as.matrix(regret.ce.gest.star));
       obj$opt.Y = data$outcome + obj$regret;
     }
     
